@@ -1,0 +1,104 @@
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --bg-color: rgb(32, 32, 32);
+    --f-color: white;
+    --glass-btn-color: #61AEEE;
+    --glass-btn--hover: #3791da;
+
+}
+
+body::selection{
+    color: #61AEEE;
+    background-color: white;
+}
+
+.dashboard {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.water-intake {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+.glass {
+    display: flex;
+    flex-direction: row;
+    gap: 34px;
+}
+
+.water-glass {
+    width: 12rem;
+    height: 100%;
+    align-self: center;
+}
+
+.water-glass:hover{
+    cursor: none;
+}
+
+.glasses {
+    display: flex;
+    gap: 7px;
+    flex-direction: column;
+}
+
+.glas {
+    padding: 12px;
+    background-color: var(--glass-btn-color);
+    color: var(--f-color);
+    font-weight: 600;
+    border-radius: 12px;
+    transition: transform .4s linear;
+}
+
+.glas:hover{
+    background-color: var(--glass-btn--hover);
+    cursor: pointer;
+    transform: translateY(-3px);
+    box-shadow: 2px 1px 3px rgb(135, 135, 135);
+}
+
+#resetbtn {
+    margin-top: 12px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 12px;
+    background: var(--glass-btn-color);
+    color: black;
+    font-weight: 700;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    cursor: pointer;
+}
+
+#resetbtn span {
+    position: relative;
+    z-index: 2;
+}
+
+#resetbtn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--glass-btn--hover);
+    transform: translateX(-101%);
+    transition: transform 0.3s ease;
+    z-index: 0;
+}
+
+#resetbtn:hover::before {
+    transform: translateX(0);
+}
